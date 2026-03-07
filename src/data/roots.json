@@ -1,0 +1,21 @@
+[
+  {
+    "root": "K-T-B",
+    "arabic": "ك ت ب",
+    "meaning": "Writing",
+    "family": [
+      { "word": "Kitab", "script": "كِتَاب", "type": "Noun", "meaning": "Book" },
+      { "word": "Kataba", "script": "كَتَبَ", "type": "Verb", "meaning": "He wrote" },
+      { "word": "Maktab", "script": "مَكْتَب", "meaning": "Office" }
+    ]
+  },
+  {
+    "root": "D-R-S",
+    "arabic": "د ر س",
+    "meaning": "Studying",
+    "family": [
+      { "word": "Darsa", "script": "دَرَسَ", "meaning": "He studied" },
+      {"word": "Madrasa", "script": "مَدْرَسَة", "meaning": "School"}
+    ]
+  }
+]
