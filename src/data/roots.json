@@ -1,33 +1,106 @@
 [
   {
+    "id": 1,
+    "level": 1,
     "root": "K-T-B",
     "arabic": "ك ت ب",
     "meaning": "Writing",
     "mastered": false,
     "family": [
       { "word": "Kitab", "script": "كِتَاب", "type": "Noun", "meaning": "Book" },
-      { "word": "Kataba", "script": "كَتَبَ", "type": "Verb", "meaning": "He wrote" },
-      { "word": "Maktab", "script": "مَكْتَب", "type": "Noun", "meaning": "Office" }
+      { "word": "Maktab", "script": "مَكْتَب", "type": "Place", "meaning": "Office/Desk" },
+      { "word": "Kataba", "script": "كَتَبَ", "type": "Action", "meaning": "He wrote" }
     ]
   },
   {
+    "id": 2,
+    "level": 1,
     "root": "D-R-S",
     "arabic": "د ر س",
     "meaning": "Studying",
     "mastered": false,
     "family": [
-      { "word": "Darsa", "script": "دَرَسَ", "type": "Verb", "meaning": "He studied" },
-      { "word": "Madrasa", "script": "مَدْرَسَة", "type": "Noun", "meaning": "School" }
+      { "word": "Darsa", "script": "دَرَسَ", "type": "Action", "meaning": "He studied" },
+      { "word": "Madrasa", "script": "مَدْرَسَة", "type": "Place", "meaning": "School" },
+      { "word": "Mudarris", "script": "مُدَرِّس", "type": "Person", "meaning": "Teacher" }
     ]
   },
   {
-    "root": "Q-T-A",
-    "arabic": "ق ط ع",
-    "meaning": "Sector/Cutting",
+    "id": 3,
+    "level": 2,
+    "root": "H-K-M",
+    "arabic": "ح ك م",
+    "meaning": "Wisdom/Rule",
     "mastered": false,
     "family": [
-      { "word": "Qita'", "script": "قِطَاع", "type": "Noun", "meaning": "Sector" },
-      { "word": "Maqta'", "script": "مَقْطَع", "type": "Noun", "meaning": "Section" }
+      { "word": "Hukuma", "script": "حُكُومَة", "type": "Noun", "meaning": "Government" },
+      { "word": "Hakim", "script": "حَكِيم", "type": "Person", "meaning": "Wise/Judge" },
+      { "word": "Mahkama", "script": "مَحْكَمَة", "type": "Place", "meaning": "Court" }
+    ]
+  },
+  {
+    "id": 4,
+    "level": 2,
+    "root": "S-L-M",
+    "arabic": "س ل م",
+    "meaning": "Peace/Submission",
+    "mastered": false,
+    "family": [
+      { "word": "Salam", "script": "سَلَام", "type": "Noun", "meaning": "Peace" },
+      { "word": "Taslim", "script": "تَسْلِيم", "type": "Action", "meaning": "Delivery/Submission" },
+      { "word": "Muslim", "script": "مُسْلِم", "type": "Person", "meaning": "One who submits" }
+    ]
+  },
+  {
+    "id": 5,
+    "level": 3,
+    "root": "Q-D-R",
+    "arabic": "ق د ر",
+    "meaning": "Power/Ability",
+    "mastered": false,
+    "family": [
+      { "word": "Qudra", "script": "قُدْرَة", "type": "Noun", "meaning": "Capability/Power" },
+      { "word": "Miqdar", "script": "مِقْدَار", "type": "Noun", "meaning": "Amount/Measure" },
+      { "word": "Taqdir", "script": "تَقْنِير", "type": "Action", "meaning": "Appreciation/Estimation" }
+    ]
+  },
+  {
+    "id": 6,
+    "level": 3,
+    "root": "A-L-M",
+    "arabic": "ع ل م",
+    "meaning": "Knowledge/Science",
+    "mastered": false,
+    "family": [
+      { "word": "Alim", "script": "عَالِم", "type": "Person", "meaning": "Scientist/Scholar" },
+      { "word": "Ma'lum", "script": "مَعْلُوم", "type": "Adj", "meaning": "Known/Information" },
+      { "word": "I'lam", "script": "إِعْلَام", "type": "Noun", "meaning": "Media/Information" }
+    ]
+  },
+  {
+    "id": 7,
+    "level": 4,
+    "root": "S-F-R",
+    "arabic": "س ف ر",
+    "meaning": "Travel/Representation",
+    "mastered": false,
+    "family": [
+      { "word": "Safir", "script": "سَفِير", "type": "Person", "meaning": "Ambassador" },
+      { "word": "Sifara", "script": "سِفَارَة", "type": "Place", "meaning": "Embassy" },
+      { "word": "Musafir", "script": "مُسَافِر", "type": "Person", "meaning": "Traveler" }
+    ]
+  },
+  {
+    "id": 8,
+    "level": 5,
+    "root": "S-W-Q",
+    "arabic": "س و ق",
+    "meaning": "Markets/Driving",
+    "mastered": false,
+    "family": [
+      { "word": "Suq", "script": "سُوق", "type": "Place", "meaning": "Market" },
+      { "word": "Taswiq", "script": "تَسْوِيق", "type": "Action", "meaning": "Marketing" },
+      { "word": "Sa'iq", "script": "سَائِق", "type": "Person", "meaning": "Driver" }
     ]
   }
 ]
