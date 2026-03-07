@@ -40,32 +40,6 @@
   },
   {
     "id": 4,
-    "level": 2,
-    "root": "S-L-M",
-    "arabic": "س ل م",
-    "meaning": "Peace/Submission",
-    "mastered": false,
-    "family": [
-      { "word": "Salam", "script": "سَلَام", "type": "Noun", "meaning": "Peace" },
-      { "word": "Taslim", "script": "تَسْلِيم", "type": "Action", "meaning": "Delivery/Submission" },
-      { "word": "Muslim", "script": "مُسْلِم", "type": "Person", "meaning": "One who submits" }
-    ]
-  },
-  {
-    "id": 5,
-    "level": 3,
-    "root": "Q-D-R",
-    "arabic": "ق د ر",
-    "meaning": "Power/Ability",
-    "mastered": false,
-    "family": [
-      { "word": "Qudra", "script": "قُدْرَة", "type": "Noun", "meaning": "Capability/Power" },
-      { "word": "Miqdar", "script": "مِقْدَار", "type": "Noun", "meaning": "Amount/Measure" },
-      { "word": "Taqdir", "script": "تَقْنِير", "type": "Action", "meaning": "Appreciation/Estimation" }
-    ]
-  },
-  {
-    "id": 6,
     "level": 3,
     "root": "A-L-M",
     "arabic": "ع ل م",
@@ -78,11 +52,11 @@
     ]
   },
   {
-    "id": 7,
+    "id": 5,
     "level": 4,
     "root": "S-F-R",
     "arabic": "س ف ر",
-    "meaning": "Travel/Representation",
+    "meaning": "Representation",
     "mastered": false,
     "family": [
       { "word": "Safir", "script": "سَفِير", "type": "Person", "meaning": "Ambassador" },
@@ -91,7 +65,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 6,
     "level": 5,
     "root": "S-W-Q",
     "arabic": "س و ق",
