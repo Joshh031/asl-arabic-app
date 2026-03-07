@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import initialRoots from '@/data/roots.json';
-
+export const dynamic = 'force-dynamic';
 export default function AslApp() {
   const [roots, setRoots] = useState(initialRoots);
   const [selectedRoot, setSelectedRoot] = useState(initialRoots[0]);
