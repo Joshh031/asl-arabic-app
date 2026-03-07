@@ -1,86 +1,109 @@
 'use client';
-import { useState } from 'react';
-import roots from '@/data/roots.json';
+import { useState, useEffect } from 'react';
+import initialRoots from '@/data/roots.json';
 
 export default function AslApp() {
-  const [selectedRoot, setSelectedRoot] = useState(roots[0]);
-  const [silentMode, setSilentMode] = useState(false);
+  const [roots, setRoots] = useState(initialRoots);
+  const [selectedRoot, setSelectedRoot] = useState(initialRoots[0]);
+  const [quizMode, setQuizMode] = useState(false);
+  const [stats, setStats] = useState({ mastered: 0, total: initialRoots.length });
+
+  // Quiz State
+  const [quizStep, setQuizStep] = useState(0);
+  const [score, setScore] = useState(0);
+
+  const handleMastered = (rootId: string) => {
+    // Save progress to local storage for "persistent tracking"
+    const updated = roots.map(r => r.root === rootId ? { ...r, mastered: true } : r);
+    setRoots(updated);
+    setStats({ ...stats, mastered: updated.filter(r => r.mastered).length });
+    alert("Root Mastered! Compounding your knowledge...");
+  };
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC] p-6 md:p-12 text-slate-900 font-sans">
-      <header className="flex justify-between items-center max-w-6xl mx-auto mb-16">
+    <main className="min-h-screen bg-[#FDFDFD] p-6 lg:p-12 text-slate-900">
+      {/* Metrics Header */}
+      <header className="max-w-6xl mx-auto flex justify-between items-end mb-12 border-b border-slate-100 pb-8">
         <div>
-          <h1 className="text-4xl font-black tracking-tighter text-slate-900">ASL <span className="text-blue-600">أصل</span></h1>
-          <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Structural Compounding Engine</p>
+          <h1 className="text-3xl font-black tracking-tighter">ASL <span className="text-blue-600">أصل</span></h1>
+          <div className="flex gap-4 mt-2">
+             <div className="bg-blue-50 px-3 py-1 rounded-md">
+                <p className="text-[10px] font-bold text-blue-400 uppercase">Retention Rate</p>
+                <p className="text-xl font-mono font-bold text-blue-700">{Math.round((stats.mastered / stats.total) * 100)}%</p>
+             </div>
+             <div className="bg-slate-50 px-3 py-1 rounded-md">
+                <p className="text-[10px] font-bold text-slate-400 uppercase">Roots Known</p>
+                <p className="text-xl font-mono font-bold text-slate-700">{stats.mastered}/{stats.total}</p>
+             </div>
+          </div>
         </div>
         <button 
-          onClick={() => setSilentMode(!silentMode)}
-          className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all border-2 ${
-            silentMode ? 'bg-white border-slate-200 text-slate-400' : 'bg-blue-600 border-blue-600 text-white shadow-xl shadow-blue-200'
-          }`}
+          onClick={() => setQuizMode(!quizMode)}
+          className="bg-black text-white px-8 py-3 rounded-2xl font-bold text-sm hover:scale-105 transition-transform"
         >
-          {silentMode ? "Visual Logic Mode" : "Phonetic Mode"}
+          {quizMode ? "Exit Quiz" : "Start Pulse Quiz"}
         </button>
       </header>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Left: The Root Ribbon (Discovery) */}
-        <div className="lg:col-span-4 space-y-4">
-          <h2 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Select Root Family</h2>
-          {roots.map((r) => (
-            <button
-              key={r.root}
-              onClick={() => setSelectedRoot(r)}
-              className={`w-full text-left p-6 rounded-[1.5rem] transition-all border-2 ${
-                selectedRoot.root === r.root 
-                ? 'bg-white border-blue-500 shadow-lg shadow-blue-100' 
-                : 'bg-transparent border-transparent hover:bg-slate-100 text-slate-500'
-              }`}
-            >
-              <div className="flex justify-between items-center">
-                <span className="text-3xl font-arabic">{r.arabic}</span>
-                <span className="text-xs font-mono font-bold">{r.root}</span>
-              </div>
-              <p className="text-xs font-bold uppercase mt-2 opacity-60">{r.meaning}</p>
-            </button>
-          ))}
-        </div>
-
-        {/* Right: The Compounding Lab */}
-        <div className="lg:col-span-8 space-y-8">
-          <div className="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
-             <div className="mb-10 pb-10 border-b border-slate-50">
-                <h3 className="text-sm font-black text-blue-600 uppercase tracking-widest mb-2">Current Family Base</h3>
-                <div className="text-8xl font-arabic mb-4 tracking-widest">{selectedRoot.arabic}</div>
-                <p className="text-slate-500 text-lg">Concepts related to <span className="font-bold text-slate-800">"{selectedRoot.meaning}"</span></p>
-             </div>
-
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {selectedRoot.family.map((f) => (
-                  <div key={f.word} className="group p-6 rounded-2xl bg-slate-50 hover:bg-blue-50 transition-all cursor-default">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="text-4xl font-arabic text-slate-800 group-hover:text-blue-700 transition-colors">
-                        {f.script}
-                        {silentMode && <span className="text-blue-400 text-2xl align-top"> َ </span>}
-                      </div>
-                      <span className="text-[10px] font-bold text-slate-300 uppercase tracking-tighter">{f.type}</span>
-                    </div>
-                    <h4 className="text-lg font-bold text-slate-800">{f.word}</h4>
-                    <p className="text-sm text-slate-500">{f.meaning}</p>
+        {quizMode ? (
+          /* QUIZ INTERFACE */
+          <div className="lg:col-span-12 bg-white p-20 rounded-[3rem] shadow-xl text-center border border-blue-50">
+            <h2 className="text-sm font-black text-blue-500 uppercase tracking-widest mb-8">Identify the Root</h2>
+            <div className="text-9xl font-arabic mb-12">{selectedRoot.arabic}</div>
+            <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+              {roots.map(r => (
+                <button 
+                  key={r.root}
+                  onClick={() => r.root === selectedRoot.root ? handleMastered(r.root) : alert("Try again")}
+                  className="p-6 bg-slate-50 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition-all"
+                >
+                  {r.meaning}
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : (
+          /* EXPLORER INTERFACE (Same as before but with 'Mastered' button) */
+          <>
+            <div className="lg:col-span-4 space-y-3">
+              {roots.map((r) => (
+                <button
+                  key={r.root}
+                  onClick={() => setSelectedRoot(r)}
+                  className={`w-full text-left p-5 rounded-2xl transition-all border-2 ${
+                    selectedRoot.root === r.root ? 'border-blue-500 bg-white shadow-md' : 'border-transparent opacity-60'
+                  }`}
+                >
+                  <div className="flex justify-between items-center">
+                    <span className="text-2xl font-arabic">{r.arabic}</span>
+                    {r.mastered && <span className="text-green-500 text-xs font-bold">● MASTERED</span>}
                   </div>
-                ))}
-             </div>
-          </div>
-          
-          {/* Compounding Logic Note */}
-          <div className="bg-blue-900 text-white p-8 rounded-[2rem] flex items-center gap-6">
-             <div className="text-4xl">💡</div>
-             <p className="text-sm leading-relaxed opacity-90">
-                Notice how the letters <span className="font-bold underline">{selectedRoot.arabic}</span> remain consistent. 
-                In Arabic, the **structure** (the pattern of vowels) changes the meaning, but the **root** remains the anchor of the concept.
-             </p>
-          </div>
-        </div>
+                </button>
+              ))}
+            </div>
+            <div className="lg:col-span-8 bg-white p-12 rounded-[2.5rem] border border-slate-100">
+               <div className="flex justify-between items-start mb-10">
+                  <div className="text-8xl font-arabic">{selectedRoot.arabic}</div>
+                  <button 
+                    onClick={() => handleMastered(selectedRoot.root)}
+                    className="bg-green-100 text-green-700 px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest hover:bg-green-200"
+                  >
+                    Mark as Mastered
+                  </button>
+               </div>
+               <div className="grid grid-cols-2 gap-6">
+                  {selectedRoot.family.map(f => (
+                    <div key={f.word} className="p-6 bg-slate-50 rounded-2xl">
+                       <div className="text-3xl font-arabic mb-2">{f.script}</div>
+                       <p className="font-bold text-slate-800">{f.word}</p>
+                       <p className="text-sm text-slate-500">{f.meaning}</p>
+                    </div>
+                  ))}
+               </div>
+            </div>
+          </>
+        )}
       </div>
     </main>
   );
