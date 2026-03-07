@@ -3,19 +3,31 @@
     "root": "K-T-B",
     "arabic": "ك ت ب",
     "meaning": "Writing",
+    "mastered": false,
     "family": [
       { "word": "Kitab", "script": "كِتَاب", "type": "Noun", "meaning": "Book" },
       { "word": "Kataba", "script": "كَتَبَ", "type": "Verb", "meaning": "He wrote" },
-      { "word": "Maktab", "script": "مَكْتَب", "meaning": "Office" }
+      { "word": "Maktab", "script": "مَكْتَب", "type": "Noun", "meaning": "Office" }
     ]
   },
   {
     "root": "D-R-S",
     "arabic": "د ر س",
     "meaning": "Studying",
+    "mastered": false,
     "family": [
-      { "word": "Darsa", "script": "دَرَسَ", "meaning": "He studied" },
-      {"word": "Madrasa", "script": "مَدْرَسَة", "meaning": "School"}
+      { "word": "Darsa", "script": "دَرَسَ", "type": "Verb", "meaning": "He studied" },
+      { "word": "Madrasa", "script": "مَدْرَسَة", "type": "Noun", "meaning": "School" }
+    ]
+  },
+  {
+    "root": "Q-T-A",
+    "arabic": "ق ط ع",
+    "meaning": "Sector/Cutting",
+    "mastered": false,
+    "family": [
+      { "word": "Qita'", "script": "قِطَاع", "type": "Noun", "meaning": "Sector" },
+      { "word": "Maqta'", "script": "مَقْطَع", "type": "Noun", "meaning": "Section" }
     ]
   }
 ]
