@@ -1,80 +1,44 @@
 [
   {
-    "id": 1,
-    "level": 1,
-    "root": "K-T-B",
-    "arabic": "ك ت ب",
-    "meaning": "Writing",
-    "mastered": false,
+    "id": 1, "sprint": 1, "root": "K-T-B", "arabic": "ك ت ب", "meaning": "Writing", "weight": 1.0,
     "family": [
-      { "word": "Kitab", "script": "كِتَاب", "type": "Noun", "meaning": "Book" },
-      { "word": "Maktab", "script": "مَكْتَب", "type": "Place", "meaning": "Office/Desk" },
-      { "word": "Kataba", "script": "كَتَبَ", "type": "Action", "meaning": "He wrote" }
+      { "word": "Kitab", "script": "كِتَاب", "meaning": "Book" },
+      { "word": "Katib", "script": "كَاتِب", "meaning": "Writer/Clerk" },
+      { "word": "Maktaba", "script": "مَكْتَبَة", "meaning": "Library/Bookstore" },
+      { "word": "Maktub", "script": "مَكْتُوب", "meaning": "Letter/Written" }
     ]
   },
   {
-    "id": 2,
-    "level": 1,
-    "root": "D-R-S",
-    "arabic": "د ر س",
-    "meaning": "Studying",
-    "mastered": false,
+    "id": 2, "sprint": 1, "root": "D-R-S", "arabic": "د ر س", "meaning": "Studying", "weight": 1.0,
     "family": [
-      { "word": "Darsa", "script": "دَرَسَ", "type": "Action", "meaning": "He studied" },
-      { "word": "Madrasa", "script": "مَدْرَسَة", "type": "Place", "meaning": "School" },
-      { "word": "Mudarris", "script": "مُدَرِّس", "type": "Person", "meaning": "Teacher" }
+      { "word": "Madrasa", "script": "مَدْرَسَة", "meaning": "School" },
+      { "word": "Mudarris", "script": "مُدَرِّس", "meaning": "Teacher" },
+      { "word": "Dirasa", "script": "دِرَاسَة", "meaning": "A Study/Research" }
     ]
   },
   {
-    "id": 3,
-    "level": 2,
-    "root": "H-K-M",
-    "arabic": "ح ك م",
-    "meaning": "Wisdom/Rule",
-    "mastered": false,
+    "id": 3, "sprint": 1, "root": "Q-R-A", "arabic": "ق ر أ", "meaning": "Reading", "weight": 1.1,
     "family": [
-      { "word": "Hukuma", "script": "حُكُومَة", "type": "Noun", "meaning": "Government" },
-      { "word": "Hakim", "script": "حَكِيم", "type": "Person", "meaning": "Wise/Judge" },
-      { "word": "Mahkama", "script": "مَحْكَمَة", "type": "Place", "meaning": "Court" }
+      { "word": "Qari", "script": "قَارِئ", "meaning": "Reader" },
+      { "word": "Maqru", "script": "مَقْرُوء", "meaning": "Readable" },
+      { "word": "Iqtira", "script": "اِقْتِرَاء", "meaning": "Recitation" }
     ]
   },
   {
-    "id": 4,
-    "level": 3,
-    "root": "A-L-M",
-    "arabic": "ع ل م",
-    "meaning": "Knowledge/Science",
-    "mastered": false,
+    "id": 4, "sprint": 2, "root": "H-K-M", "arabic": "ح ك م", "meaning": "Governance", "weight": 1.5,
     "family": [
-      { "word": "Alim", "script": "عَالِم", "type": "Person", "meaning": "Scientist/Scholar" },
-      { "word": "Ma'lum", "script": "مَعْلُوم", "type": "Adj", "meaning": "Known/Information" },
-      { "word": "I'lam", "script": "إِعْلَام", "type": "Noun", "meaning": "Media/Information" }
+      { "word": "Hukuma", "script": "حُكُومَة", "meaning": "Government" },
+      { "word": "Mahkama", "script": "مَحْكَمَة", "meaning": "Court" },
+      { "word": "Tahakkum", "script": "تَحَكُّم", "meaning": "Control/Dominance" },
+      { "word": "Ahkam", "script": "أَحْكَام", "meaning": "Provisions/Rulings" }
     ]
   },
   {
-    "id": 5,
-    "level": 4,
-    "root": "S-F-R",
-    "arabic": "س ف ر",
-    "meaning": "Representation",
-    "mastered": false,
+    "id": 5, "sprint": 2, "root": "S-L-M", "arabic": "س ل م", "meaning": "Security/Peace", "weight": 1.3,
     "family": [
-      { "word": "Safir", "script": "سَفِير", "type": "Person", "meaning": "Ambassador" },
-      { "word": "Sifara", "script": "سِفَارَة", "type": "Place", "meaning": "Embassy" },
-      { "word": "Musafir", "script": "مُسَافِر", "type": "Person", "meaning": "Traveler" }
-    ]
-  },
-  {
-    "id": 6,
-    "level": 5,
-    "root": "S-W-Q",
-    "arabic": "س و ق",
-    "meaning": "Markets/Driving",
-    "mastered": false,
-    "family": [
-      { "word": "Suq", "script": "سُوق", "type": "Place", "meaning": "Market" },
-      { "word": "Taswiq", "script": "تَسْوِيق", "type": "Action", "meaning": "Marketing" },
-      { "word": "Sa'iq", "script": "سَائِق", "type": "Person", "meaning": "Driver" }
+      { "word": "Salama", "script": "سَلَامة", "meaning": "Safety" },
+      { "word": "Istislam", "script": "اِسْتِسْلَام", "meaning": "Surrender/Submission" },
+      { "word": "Musallam", "script": "مُسَلَّم", "meaning": "Accepted/Undisputed" }
     ]
   }
 ]
